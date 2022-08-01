@@ -1,4 +1,4 @@
-# Instalación / Configuración entorno IA / 2021-2022 - Linux / Mac OS
+# Instalación / Configuración entorno IA / 2022-2023 - Linux / Mac OS
 -------------------------------------------------------------------------------
 
 ## Descargar y copiar el SW
@@ -13,16 +13,10 @@
             - Se puede utilizar la versión Community (libre) o la versión Ultimate
               (solicitando una licencia para estudiantes según se indica en
               https://www.jetbrains.com/es-es/community/education/#students).
-    - Instalar como paquete
-        - AdoptOpenJDK
-            - Instalar como paquete siguiendo las instrucciones que se 
-              indican en la sección "Linux RPM and DEB installer packages" de 
-              https://adoptopenjdk.net/installation.html.
-            - Instalar la versión "Open JDK 8 (LTS)" con la JVM "Hotspot"
-              (necesaria para OpenESB)
-            - Instalar la version "Open JDK 11 (LTS)" con la JVM "Hotspot"
-              (adoptopenjdk-11-hotspot).
-
+        - Eclipse Temurin (proyecto open source de Java SE basado en OpenJDK)
+            - https://adoptium.net
+            - Descargar el archivo .tar.gz de la versión 8 (necesaria para el software OpenESB).
+            - Descargar el archivo .tar.gz de la versión 17 (LTS).
 
 - [macOS] 
     - Descargar y descomprimir en `$HOME/software`
@@ -36,37 +30,38 @@
               (solicitando una licencia para estudiantes según se indica en
               https://www.jetbrains.com/es-es/community/education/#students).
             - Instalar usando las opciones por defecto.
-        - AdoptOpenJDK
-            - https://adoptopenjdk.net/
-            - Seleccionar la version "Open JDK 11 (LTS)" y la JVM "Hotspot".
-            - Descargar el instalador .pkg para macOS e instalar usando las opciones por defecto.
-            - NOTA: Necesario también "Open JDK 8 (LTS)" con la JVM "Hotspot" para OpenESB.
+        - Eclipse Temurin (proyecto open source de Java SE basado en OpenJDK)
+            - https://adoptium.net
+            - Descargar el instalador .pkg de la versión 8 e instalar usando las opciones por defecto (necesaria para el software OpenESB).
+            - Descargar el instalador .pkg de la versión 17 (LTS) e instalar usando las opciones por defecto.
+
       
 ## Descargar y descomprimir los ejemplos de la asignatura (rs-java-examples y ws-movies-repo)
-- Descargar en `$HOME/software`
 
 > Disponibles en moodle
 
+- Descargar en `$HOME/software`
+
 ```shell
     cd $HOME/software
-    tar zxf rs-javaexamples-3.5.0-src.tar.gz
+    tar zxf rs-javaexamples-3.6.0-src.tar.gz
     cd $HOME/.m2/repository
-    tar zxf ws-movies-3.5.0-repo.tar.gz
+    tar zxf ws-movies-3.6.0-repo.tar.gz
 ```
   
 ## [Linux] Establecer variables de entorno
 - Añadir al fichero `$HOME/.bashrc` lo siguiente 
-> NOTA: Los valores de las variables MAVEN_HOME y JAVA_HOME deben sustituirse por los 
-  directorios donde se haya descomprimido Maven e instalado AdoptOpenJDK respectivamente
+
+> NOTA: Los valores de las variables JAVA_HOME, MAVEN_HOME e IDEA_HOME deben sustituirse por los 
+  directorios donde se haya descomprimido Maven e IntelliJ IDEA, e instalado Eclipse Temurin respectivamente
 
 ```shell
     # AdoptOpenJDK (Linux)
-    export JAVA_HOME=/usr/lib/jvm/adoptopenjdk-11-hotspot-amd64
-
+    export JAVA_HOME=$HOME/software/jdk-17.0.3+7
     PATH=$JAVA_HOME/bin:$PATH
 
     # Maven
-    MAVEN_HOME=$HOME/software/apache-maven-3.8.2
+    MAVEN_HOME=$HOME/software/apache-maven-3.8.6
     PATH=$MAVEN_HOME/bin:$PATH
     export MAVEN_OPTS="-Xms512m -Xmx1024m"
 
@@ -74,6 +69,7 @@
     IDEA_HOME=$HOME/software/idea
     PATH=$IDEA_HOME/bin:$PATH    
 ```
+
 - Cerrar todos los terminales y abrir terminales nuevos
 
 - Comprobar que el entorno ha quedado correctamente configurado comprobando 
@@ -96,19 +92,14 @@
 directorios donde se haya descomprimido Maven e instalado AdoptOpenJDK respectivamente
 
 ```shell
-    # AdoptOpenJDK (macOS)
-    export JAVA_HOME=/Library/Java/JavaVirtualMachines/adoptopenjdk-11.jdk/Contents/Home
-
+    # Eclipse Temurin (JDK 17)
+    export JAVA_HOME=/Library/Java/JavaVirtualMachines/temurin-17.jdk/Contents/Home
     PATH=$JAVA_HOME/bin:$PATH
 
     # Maven
-    MAVEN_HOME=$HOME/software/apache-maven-3.8.2
+    MAVEN_HOME=$HOME/software/apache-maven-3.8.6
     PATH=$MAVEN_HOME/bin:$PATH
     export MAVEN_OPTS="-Xms512m -Xmx1024m"
-
-    # MySQL.
-    MYSQL_HOME=/usr/local/mysql
-    PATH=$MYSQL_HOME/bin:$PATH
 ```
 
 - Cerrar todos los terminales y abrir terminales nuevos
@@ -129,9 +120,9 @@ directorios donde se haya descomprimido Maven e instalado AdoptOpenJDK respectiv
     utilizar el perfil -P mysql, y disponer de un servidor MySQL configurado
 
 ```shell
-    cd $HOME/software/rs-javaexamples-3.5.0
+    cd $HOME/software/rs-javaexamples-3.6.0
     mvn install
-    cd $HOME/software/rs-javaexamples-3.5.0/rs-movies/rs-movies-service
+    cd $HOME/software/rs-javaexamples-3.6.0/rs-movies/rs-movies-service
     mvn sql:execute
 ```
 

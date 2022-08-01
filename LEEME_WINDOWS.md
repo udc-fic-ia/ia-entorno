@@ -1,4 +1,4 @@
-# Instalación / Configuración entorno IA / 2021-2022 - Windows
+# Instalación / Configuración entorno IA / 2022-2023 - Windows
 -------------------------------------------------------------------------------
 
 ## Descargar y copiar el SW 
@@ -6,22 +6,18 @@
 > NOTA: Se recomienda utilizar un usuario de Windows sin espacios en el nombre 
   para evitar problemas con Maven.
 
-- Descargar y descomprimir en `C:\Program Files\Java` el siguiente software
+- Descargar y descomprimir en `C:\software` el siguiente software
     - Maven 3.8.x o superior 
         + https://maven.apache.org/download.cgi
         + Descargar el "Binary zip archive"
 
-- Descargar e instalar AdoptOpenJDK 8 (necesaria para OpenESB)
-    - https://adoptopenjdk.net/
-    - Seleccionar la version "Open JDK 8 (LTS)" y la JVM "Hotspot".
-    - Descargar el instalador .msi para Windows e instalar usando las opciones por defecto.
+- Descargar e instalar Eclipse Temurin (proyecto open source de Java SE basado en OpenJDK)
+    - https://adoptium.net
+    - Descargar el instalador .msi para Windows para la versión 8 (requerida por el software OpenESB)
+    - Descargar el instalador .msi para Windows para la versión 17 (LTS) 
+    - Instalar usando las opciones por defecto
 
-- Descargar e instalar AdoptOpenJDK 11
-    - https://adoptopenjdk.net/
-    - Seleccionar la version "Open JDK 11 (LTS)" y la JVM "Hotspot".
-    - Descargar el instalador .msi para Windows e instalar usando las opciones por defecto.
-
-- Descargar e instalar IDEA IntelliJ
+- Descargar e instalar IntelliJ IDEA
     - https://www.jetbrains.com/es-es/idea/download
         + Se puede utilizar la versión Community (libre) o la versión Ultimate
           (solicitando una licencia para estudiantes según se indica en
@@ -32,9 +28,9 @@
 
 > Disponibles en moodle
 
-- Descargar `rs-javaexamples-3.5.0-src.zip` en `C:\software` y descomprimir.
+- Descargar `rs-javaexamples-3.6.0-src.zip` en `C:\software` y descomprimir.
 
-- Descargar `ws-movies-3.5.0-repo.zip` en la carpeta `.m2\repository` del directorio HOME del usuario y descomprimir. 
+- Descargar `ws-movies-3.6.0-repo.zip` en la carpeta `.m2\repository` del directorio HOME del usuario y descomprimir. 
   
 ## Establecer variables de entorno
 
@@ -44,11 +40,11 @@
   variables de entorno (para cada una pulsar en "Nueva ...", introducir el 
   nombre y el valor, y pulsar "Aceptar")
     - Nombre: `JAVA_HOME`
-        + Valor: Directorio donde se instaló AdoptOpenJDK
-        + Por ejemplo:`C:\Program Files\AdoptOpenJDK\jdk-11.0.11.9-hotspot`
+        + Valor: Directorio donde se instaló Eclipse Temurin (JDK 17)
+        + Por ejemplo:`C:\Program Files\Eclipse Adoptium\jdk-17.0.4.8-hotspot`
     - Nombre: `MAVEN_HOME`
         + Valor: Directorio donde se descomprimió Maven
-        + Por ejemplo: `C:\Program Files\Java\apache-maven-3.8.2`
+        + Por ejemplo: `C:\software\apache-maven-3.8.6`
     - Nombre: `MAVEN_OPTS`
         + Valor: `-Xms512m -Xmx1024m`
 
@@ -79,9 +75,9 @@
       utilizar el perfil -P mysql, y disponer de un servidor MySQL configurado
 
 ```shell
-    cd C:/software/rs-javaexamples-3.5.0
+    cd C:/software/rs-javaexamples-3.6.0
     mvn install
-    cd C:/software/rs-javaexamples-3.5.0/rs-movies/rs-movies-service
+    cd C:/software/rs-javaexamples-3.6.0/rs-movies/rs-movies-service
     mvn sql:execute
 ```
 
@@ -107,7 +103,7 @@
 > El siguiente comando ilustra como configurar Sublime como editor por defecto de Git, aunque se puede utilizar otro editor instalado en el sistema operativo.
 
 ```shell
-    git config --global core.editor "'C:\Program Files\Sublime Text 3\sublime_text.exe' -w"
+    git config --global core.editor "'C:\Program Files\Sublime Text\sublime_text.exe' -w"
 ```
 
 ## Creación y configuración de claves SSH
