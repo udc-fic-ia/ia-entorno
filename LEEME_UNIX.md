@@ -57,7 +57,7 @@
 
 ```shell
     # AdoptOpenJDK (Linux)
-    export JAVA_HOME=$HOME/software/jdk-17.0.4+8
+    export JAVA_HOME=$HOME/software/jdk-17.0.4+101
     PATH=$JAVA_HOME/bin:$PATH
 
     # Maven
