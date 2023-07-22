@@ -1,11 +1,11 @@
-# Instalación / Configuración entorno IA / 2022-2023 - Linux / Mac OS
+# Instalación / Configuración entorno IA / 2023-2024 - Linux / Mac OS
 -------------------------------------------------------------------------------
 
 ## Descargar y copiar el SW
   
 - [Linux] 
     - Descargar y descomprimir en `$HOME/software` el siguiente software
-        - Maven 3.8.x o superior 
+        - Maven 3.9.x o superior 
             - https://maven.apache.org/download.cgi
             - Descargar el "Binary tar.gz archive".
         - IDEA IntelliJ
@@ -20,7 +20,7 @@
 
 - [macOS] 
     - Descargar y descomprimir en `$HOME/software`
-        - Maven 3.8.x o superior 
+        - Maven 3.9.x o superior 
             - https://maven.apache.org/download.cgi
             - Descargar el "Binary tar.gz archive"
     - Descargar e instalar
@@ -44,9 +44,9 @@
 
 ```shell
     cd $HOME/software
-    tar zxf rs-javaexamples-3.6.0-src.tar.gz
+    tar zxf rs-javaexamples-3.7.0-src.tar.gz
     cd $HOME/.m2/repository
-    tar zxf ws-movies-3.6.0-repo.tar.gz
+    tar zxf ws-movies-3.7.0-repo.tar.gz
 ```
   
 ## [Linux] Establecer variables de entorno
@@ -57,11 +57,11 @@
 
 ```shell
     # AdoptOpenJDK (Linux)
-    export JAVA_HOME=$HOME/software/jdk-17.0.4+101
+    export JAVA_HOME=$HOME/software/jdk-17.0.8+7
     PATH=$JAVA_HOME/bin:$PATH
 
     # Maven
-    MAVEN_HOME=$HOME/software/apache-maven-3.8.6
+    MAVEN_HOME=$HOME/software/apache-maven-3.9.3
     PATH=$MAVEN_HOME/bin:$PATH
     export MAVEN_OPTS="-Xms512m -Xmx1024m"
 
@@ -97,7 +97,7 @@ directorios donde se haya descomprimido Maven e instalado AdoptOpenJDK respectiv
     PATH=$JAVA_HOME/bin:$PATH
 
     # Maven
-    MAVEN_HOME=$HOME/software/apache-maven-3.8.6
+    MAVEN_HOME=$HOME/software/apache-maven-3.9.3
     PATH=$MAVEN_HOME/bin:$PATH
     export MAVEN_OPTS="-Xms512m -Xmx1024m"
 ```
@@ -120,9 +120,9 @@ directorios donde se haya descomprimido Maven e instalado AdoptOpenJDK respectiv
     utilizar el perfil -P mysql, y disponer de un servidor MySQL configurado
 
 ```shell
-    cd $HOME/software/rs-javaexamples-3.6.0
+    cd $HOME/software/rs-javaexamples-3.7.0
     mvn install
-    cd $HOME/software/rs-javaexamples-3.6.0/rs-movies/rs-movies-service
+    cd $HOME/software/rs-javaexamples-3.7.0/rs-movies/rs-movies-service
     mvn sql:execute
 ```
 
