@@ -140,3 +140,6 @@
 
 - Puede utilizarse cualquier herramienta cliente (https://git-scm.com/downloads/guis)
 
+## Configuración de IntelliJ IDEA
+- Se recomienda configurar "Git Bash" como el terminal por defecto. Se puede hacer en el wizard
+  `File > Settings > Tools > Terminal` seleccionando `C:\Program Files\Git\bin\bash.exe` como valor de `Shell path`
