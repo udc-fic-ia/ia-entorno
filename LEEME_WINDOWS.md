@@ -41,10 +41,10 @@
   nombre y el valor, y pulsar "Aceptar")
     - Nombre: `JAVA_HOME`
         + Valor: Directorio donde se instaló Eclipse Temurin (JDK 17)
-        + Por ejemplo:`C:\Program Files\Eclipse Adoptium\jdk-17.0.8.7-hotspot`
+        + Por ejemplo:`C:\Program Files\Eclipse Adoptium\jdk-17.0.8.1_1-hotspot`
     - Nombre: `MAVEN_HOME`
         + Valor: Directorio donde se descomprimió Maven
-        + Por ejemplo: `C:\software\apache-maven-3.9.3`
+        + Por ejemplo: `C:\software\apache-maven-3.9.4`
     - Nombre: `MAVEN_OPTS`
         + Valor: `-Xms512m -Xmx1024m`
 
