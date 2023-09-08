@@ -57,11 +57,11 @@
 
 ```shell
     # AdoptOpenJDK (Linux)
-    export JAVA_HOME=$HOME/software/jdk-17.0.8+7
+    export JAVA_HOME=$HOME/software/jdk-17.0.8.1+1
     PATH=$JAVA_HOME/bin:$PATH
 
     # Maven
-    MAVEN_HOME=$HOME/software/apache-maven-3.9.3
+    MAVEN_HOME=$HOME/software/apache-maven-3.9.4
     PATH=$MAVEN_HOME/bin:$PATH
     export MAVEN_OPTS="-Xms512m -Xmx1024m"
 
@@ -97,7 +97,7 @@ directorios donde se haya descomprimido Maven e instalado AdoptOpenJDK respectiv
     PATH=$JAVA_HOME/bin:$PATH
 
     # Maven
-    MAVEN_HOME=$HOME/software/apache-maven-3.9.3
+    MAVEN_HOME=$HOME/software/apache-maven-3.9.4
     PATH=$MAVEN_HOME/bin:$PATH
     export MAVEN_OPTS="-Xms512m -Xmx1024m"
 ```
