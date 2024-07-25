@@ -1,4 +1,4 @@
-# Instalación / Configuración entorno IA / 2023-2024 - Linux / Mac OS
+# Instalación / Configuración entorno IA / 2024-2025 - Linux / Mac OS
 -------------------------------------------------------------------------------
 
 ## Descargar y copiar el SW
@@ -8,7 +8,7 @@
         - Maven 3.9.x o superior 
             - https://maven.apache.org/download.cgi
             - Descargar el "Binary tar.gz archive".
-        - IDEA IntelliJ
+        - IntelliJ IDEA 
             - https://www.jetbrains.com/es-es/idea/download
             - Se puede utilizar la versión Community (libre) o la versión Ultimate
               (solicitando una licencia para estudiantes según se indica en
@@ -16,7 +16,7 @@
         - Eclipse Temurin (proyecto open source de Java SE basado en OpenJDK)
             - https://adoptium.net
             - Descargar el archivo .tar.gz de la versión 8 (necesaria para el software OpenESB).
-            - Descargar el archivo .tar.gz de la versión 17 (LTS).
+            - Descargar el archivo .tar.gz de la versión 21 (última versión LTS).
 
 - [macOS] 
     - Descargar y descomprimir en `$HOME/software`
@@ -24,7 +24,7 @@
             - https://maven.apache.org/download.cgi
             - Descargar el "Binary tar.gz archive"
     - Descargar e instalar
-        - IDEA IntelliJ
+        - IntelliJ IDEA 
             - https://www.jetbrains.com/es-es/idea/download
             - Se puede utilizar la versión Community (libre) o la versión Ultimate
               (solicitando una licencia para estudiantes según se indica en
@@ -33,20 +33,20 @@
         - Eclipse Temurin (proyecto open source de Java SE basado en OpenJDK)
             - https://adoptium.net
             - Descargar el instalador .pkg de la versión 8 e instalar usando las opciones por defecto (necesaria para el software OpenESB).
-            - Descargar el instalador .pkg de la versión 17 (LTS) e instalar usando las opciones por defecto.
+            - Descargar el instalador .pkg de la versión 21 (LTS) e instalar usando las opciones por defecto.
 
       
 ## Descargar y descomprimir los ejemplos de la asignatura (rs-java-examples y ws-movies-repo)
 
 > Disponibles en moodle
 
-- Descargar en `$HOME/software`
+- Descargar `rs-javaexamples-3.8.0-src.tar.gz` y `ws-movies-3.8.0-repo.tar.gz` en `$HOME/software`
 
 ```shell
     cd $HOME/software
-    tar zxf rs-javaexamples-3.7.0-src.tar.gz
+    tar zxf rs-javaexamples-3.8.0-src.tar.gz
     cd $HOME/.m2/repository
-    tar zxf ws-movies-3.7.0-repo.tar.gz
+    tar zxf $HOME/software/ws-movies-3.8.0-repo.tar.gz
 ```
   
 ## [Linux] Establecer variables de entorno
@@ -56,12 +56,12 @@
   directorios donde se haya descomprimido Maven e IntelliJ IDEA, e instalado Eclipse Temurin respectivamente
 
 ```shell
-    # AdoptOpenJDK (Linux)
-    export JAVA_HOME=$HOME/software/jdk-17.0.8.1+1
+    # Eclipse Temurin
+    export JAVA_HOME=$HOME/software/jdk-21.0.3+9
     PATH=$JAVA_HOME/bin:$PATH
 
     # Maven
-    MAVEN_HOME=$HOME/software/apache-maven-3.9.4
+    MAVEN_HOME=$HOME/software/apache-maven-3.9.8
     PATH=$MAVEN_HOME/bin:$PATH
     export MAVEN_OPTS="-Xms512m -Xmx1024m"
 
@@ -88,16 +88,16 @@
 - Añadir al fichero `$HOME/.zshrc` (macOS 10.15 o superior) o
   `$HOME/.bash_profile` (versiones anteriores de macOS) lo siguiente:
 
-> NOTA: Los valores de las variables MAVEN_HOME y JAVA_HOME deben sustituirse por los
-directorios donde se haya descomprimido Maven e instalado AdoptOpenJDK respectivamente
+> NOTA:  Los valores de las variables MAVEN_HOME y JAVA_HOME deben sustituirse por 
+los directorios donde se haya descomprimido Maven e instalado Eclipse Temurin respectivamente
 
 ```shell
-    # Eclipse Temurin (JDK 17)
-    export JAVA_HOME=/Library/Java/JavaVirtualMachines/temurin-17.jdk/Contents/Home
+    # Eclipse Temurin
+    export JAVA_HOME=/Library/Java/JavaVirtualMachines/temurin-21.jdk/Contents/Home
     PATH=$JAVA_HOME/bin:$PATH
 
     # Maven
-    MAVEN_HOME=$HOME/software/apache-maven-3.9.4
+    MAVEN_HOME=$HOME/software/apache-maven-3.9.8
     PATH=$MAVEN_HOME/bin:$PATH
     export MAVEN_OPTS="-Xms512m -Xmx1024m"
 ```
@@ -120,9 +120,9 @@ directorios donde se haya descomprimido Maven e instalado AdoptOpenJDK respectiv
     utilizar el perfil -P mysql, y disponer de un servidor MySQL configurado
 
 ```shell
-    cd $HOME/software/rs-javaexamples-3.7.0
+    cd $HOME/software/rs-javaexamples-3.8.0
     mvn install
-    cd $HOME/software/rs-javaexamples-3.7.0/rs-movies/rs-movies-service
+    cd $HOME/software/rs-javaexamples-3.8.0/rs-movies/rs-movies-service
     mvn sql:execute
 ```
 
