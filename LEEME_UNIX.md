@@ -1,4 +1,4 @@
-# Instalación / Configuración entorno IA / 2024-2025 - Linux / Mac OS
+# Instalación / Configuración entorno IA / 2025-2026 - Linux y macOS
 -------------------------------------------------------------------------------
 
 ## Descargar y copiar el SW
@@ -26,9 +26,10 @@
     - Descargar e instalar
         - IntelliJ IDEA 
             - https://www.jetbrains.com/es-es/idea/download
-            - Se puede utilizar la versión Community (libre) o la versión Ultimate
-              (solicitando una licencia para estudiantes según se indica en
-              https://www.jetbrains.com/es-es/community/education/#students).
+              - Descargar el instalador .dmg para macOS
+              - Se puede utilizar la versión Community (libre) o la versión Ultimate
+                (solicitando una licencia para estudiantes según se indica en
+                https://www.jetbrains.com/es-es/community/education/#students).
             - Instalar usando las opciones por defecto.
         - Eclipse Temurin (proyecto open source de Java SE basado en OpenJDK)
             - https://adoptium.net
@@ -40,13 +41,13 @@
 
 > Disponibles en moodle
 
-- Descargar `rs-javaexamples-3.8.0-src.tar.gz` y `ws-movies-3.8.0-repo.tar.gz` en `$HOME/software`
+- Descargar `rs-javaexamples-3.9.0-src.tar.gz` y `ws-movies-3.9.0-repo.tar.gz` en `$HOME/software`
 
 ```shell
     cd $HOME/software
-    tar zxf rs-javaexamples-3.8.0-src.tar.gz
+    tar zxf rs-javaexamples-3.9.0-src.tar.gz
     cd $HOME/.m2/repository
-    tar zxf $HOME/software/ws-movies-3.8.0-repo.tar.gz
+    tar zxf $HOME/software/ws-movies-3.9.0-repo.tar.gz
 ```
   
 ## [Linux] Establecer variables de entorno
@@ -57,11 +58,11 @@
 
 ```shell
     # Eclipse Temurin
-    export JAVA_HOME=$HOME/software/jdk-21.0.3+9
+    export JAVA_HOME=$HOME/software/jdk-21.0.7+6
     PATH=$JAVA_HOME/bin:$PATH
 
     # Maven
-    MAVEN_HOME=$HOME/software/apache-maven-3.9.8
+    MAVEN_HOME=$HOME/software/apache-maven-3.9.10
     PATH=$MAVEN_HOME/bin:$PATH
     export MAVEN_OPTS="-Xms512m -Xmx1024m"
 
@@ -93,7 +94,7 @@ los directorios donde se haya descomprimido Maven e instalado Eclipse Temurin re
     PATH=$JAVA_HOME/bin:$PATH
 
     # Maven
-    MAVEN_HOME=$HOME/software/apache-maven-3.9.8
+    MAVEN_HOME=$HOME/software/apache-maven-3.9.10
     PATH=$MAVEN_HOME/bin:$PATH
     export MAVEN_OPTS="-Xms512m -Xmx1024m"
 ```
@@ -116,9 +117,9 @@ los directorios donde se haya descomprimido Maven e instalado Eclipse Temurin re
     utilizar el perfil -P mysql, y disponer de un servidor MySQL configurado
 
 ```shell
-    cd $HOME/software/rs-javaexamples-3.8.0
+    cd $HOME/software/rs-javaexamples-3.9.0
     mvn install
-    cd $HOME/software/rs-javaexamples-3.8.0/rs-movies/rs-movies-service
+    cd $HOME/software/rs-javaexamples-3.9.0/rs-movies/rs-movies-service
     mvn sql:execute
 ```
 

@@ -1,4 +1,4 @@
-# Instalación / Configuración entorno IA / 2024-2025 - Windows
+# Instalación / Configuración entorno IA / 2025-2026 - Windows
 -------------------------------------------------------------------------------
 
 ## Descargar y copiar el SW 
@@ -28,9 +28,9 @@
 
 > Disponibles en moodle
 
-- Descargar `rs-javaexamples-3.8.0-src.zip` en `C:\software` y descomprimir.
+- Descargar `rs-javaexamples-3.9.0-src.zip` en `C:\software` y descomprimir.
 
-- Descargar `ws-movies-3.8.0-repo.zip` en la carpeta `.m2\repository` del directorio HOME del usuario y descomprimir. 
+- Descargar `ws-movies-3.9.0-repo.zip` en la carpeta `.m2\repository` del directorio HOME del usuario y descomprimir. 
   
 ## Establecer variables de entorno
 
@@ -41,10 +41,10 @@
   nombre y el valor, y pulsar "Aceptar")
     - Nombre: `JAVA_HOME`
         + Valor: Directorio donde se instaló Eclipse Temurin (JDK 17)
-        + Por ejemplo:`C:\Program Files\Eclipse Adoptium\jdk-21.0.3.9-hotspot`
+        + Por ejemplo:`C:\Program Files\Eclipse Adoptium\jdk-21.0.7.6-hotspot`
     - Nombre: `MAVEN_HOME`
         + Valor: Directorio donde se descomprimió Maven
-        + Por ejemplo: `C:\software\apache-maven-3.9.8`
+        + Por ejemplo: `C:\software\apache-maven-3.9.10`
     - Nombre: `MAVEN_OPTS`
         + Valor: `-Xms512m -Xmx1024m`
 
@@ -75,9 +75,9 @@
       utilizar el perfil -P mysql, y disponer de un servidor MySQL configurado
 
 ```shell
-    cd C:/software/rs-javaexamples-3.8.0
+    cd C:/software/rs-javaexamples-3.9.0
     mvn install
-    cd C:/software/rs-javaexamples-3.8.0/rs-movies/rs-movies-service
+    cd C:/software/rs-javaexamples-3.9.0/rs-movies/rs-movies-service
     mvn sql:execute
 ```
 
