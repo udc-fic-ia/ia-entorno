@@ -70,9 +70,9 @@
 ## Inicialización de datos de ejemplo y compilación de los ejemplos
 
 - Inicialización de la base de datos y compilación de los ejemplos
-    - Por defecto crea la base de datos Apache Derby embebida (es lo que usaremos)
+    - Por defecto crea la base de datos H2 embebida (es lo que usaremos)
     - NOTA: En el caso de querer trabajar contra MySQL, sería necesario
-      utilizar el perfil -P mysql, y disponer de un servidor MySQL configurado
+      utilizar el perfil -Pmysql, y disponer de un servidor MySQL configurado
 
 ```shell
     cd C:/software/rs-javaexamples-3.9.0
