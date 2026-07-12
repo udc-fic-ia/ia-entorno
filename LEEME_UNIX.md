@@ -1,53 +1,54 @@
-# Instalación / Configuración entorno IA / 2025-2026 - Linux y macOS
+# Instalación / Configuración entorno IA / 2026-2027 - Linux y macOS
 -------------------------------------------------------------------------------
 
 ## Descargar y copiar el SW
   
 - [Linux] 
-    - Descargar y descomprimir en `$HOME/software` el siguiente software
+    + Descargar y descomprimir en `$HOME/software` el siguiente software
         - Maven 3.9.x o superior 
-            - https://maven.apache.org/download.cgi
-            - Descargar el "Binary tar.gz archive".
-        - IntelliJ IDEA 
-            - https://www.jetbrains.com/es-es/idea/download
-            - Se puede utilizar la versión Community (libre) o la versión Ultimate
-              (solicitando una licencia para estudiantes según se indica en
-              https://www.jetbrains.com/es-es/community/education/#students).
-        - Eclipse Temurin (proyecto open source de Java SE basado en OpenJDK)
-            - https://adoptium.net
-            - Descargar el archivo .tar.gz de la versión 8 (necesaria para el software OpenESB).
-            - Descargar el archivo .tar.gz de la versión 21 (última versión LTS).
+            + https://maven.apache.org/download.cgi
+            + Descargar el "Binary tar.gz archive".
+    + Descargar e instalar Temurin JDK
+        -  https://adoptium.net/es/temurin/releases?version=8&os=any&arch=any	
+            + Descargar el archivo .tar.gz de la versión 8 (necesaria para el software OpenESB)
+	        + Instalar usando las opciones por defecto
+        - https://adoptium.net/es/temurin/releases?version=25&os=any&arch=any
+	        + Descargar el archivo .tar.gz de la versión 25 (última versión LTS)
+	        + Instalar usando las opciones por defecto	
+    + Descargar e instalar IntelliJ IDEA
+        - https://www.jetbrains.com/es-es/idea/download
+            + Se puede utilizar la versión Community (libre) o la versión Ultimate (solicitando una licencia para estudiantes según se indica en https://www.jetbrains.com/es-es/community/education/#students).
+            + Instalar usando las opciones por defecto.
 
 - [macOS] 
-    - Descargar y descomprimir en `$HOME/software`
+    + Descargar y descomprimir en `$HOME/software` el siguiente software
         - Maven 3.9.x o superior 
-            - https://maven.apache.org/download.cgi
-            - Descargar el "Binary tar.gz archive"
-    - Descargar e instalar
-        - IntelliJ IDEA 
-            - https://www.jetbrains.com/es-es/idea/download
-              - Descargar el instalador .dmg para macOS
-              - Se puede utilizar la versión Community (libre) o la versión Ultimate
-                (solicitando una licencia para estudiantes según se indica en
-                https://www.jetbrains.com/es-es/community/education/#students).
-            - Instalar usando las opciones por defecto.
-        - Eclipse Temurin (proyecto open source de Java SE basado en OpenJDK)
-            - https://adoptium.net
-            - Descargar el instalador .pkg de la versión 8 e instalar usando las opciones por defecto (necesaria para el software OpenESB).
-            - Descargar el instalador .pkg de la versión 21 (LTS) e instalar usando las opciones por defecto.
-
+            + https://maven.apache.org/download.cgi
+            + Descargar el "Binary tar.gz archive"
+    + Descargar e instalar Temurin JDK
+        -  https://adoptium.net/es/temurin/releases?version=8&os=any&arch=any	
+            + Descargar el instalador .pkg de la versión 8 (necesaria para el software OpenESB)
+	        + Instalar usando las opciones por defecto
+        - https://adoptium.net/es/temurin/releases?version=25&os=any&arch=any
+	        + Descargar el instalador .pkg de la versión 25 (LTS)
+	        + Instalar usando las opciones por defecto	
+    + Descargar e instalar IntelliJ IDEA
+        - https://www.jetbrains.com/es-es/idea/download
+		    + Descargar el instalador .dmg para macOS
+            + Se puede utilizar la versión Community (libre) o la versión Ultimate (solicitando una licencia para estudiantes según se indica en https://www.jetbrains.com/es-es/community/education/#students).
+            + Instalar usando las opciones por defecto.
       
 ## Descargar y descomprimir los ejemplos de la asignatura (rs-java-examples y ws-movies-repo)
 
 > Disponibles en moodle
 
-- Descargar `rs-javaexamples-3.9.0-src.tar.gz` y `ws-movies-3.9.0-repo.tar.gz` en `$HOME/software`
+- Descargar `rs-javaexamples-3.10.0-src.tar.gz` y `ws-movies-3.10.0-repo.tar.gz` en `$HOME/software`
 
 ```shell
     cd $HOME/software
-    tar zxf rs-javaexamples-3.9.0-src.tar.gz
+    tar zxf rs-javaexamples-3.10.0-src.tar.gz
     cd $HOME/.m2/repository
-    tar zxf $HOME/software/ws-movies-3.9.0-repo.tar.gz
+    tar zxf $HOME/software/ws-movies-3.10.0-repo.tar.gz
 ```
   
 ## [Linux] Establecer variables de entorno
@@ -58,11 +59,11 @@
 
 ```shell
     # Eclipse Temurin
-    export JAVA_HOME=$HOME/software/jdk-21.0.7+6
+    export JAVA_HOME=$HOME/software/jdk-25.0.3+9
     PATH=$JAVA_HOME/bin:$PATH
 
     # Maven
-    MAVEN_HOME=$HOME/software/apache-maven-3.9.10
+    MAVEN_HOME=$HOME/software/apache-maven-3.9.16
     PATH=$MAVEN_HOME/bin:$PATH
     export MAVEN_OPTS="-Xms512m -Xmx1024m"
 
@@ -90,11 +91,11 @@ los directorios donde se haya descomprimido Maven e instalado Eclipse Temurin re
 
 ```shell
     # Eclipse Temurin
-    export JAVA_HOME=/Library/Java/JavaVirtualMachines/temurin-21.jdk/Contents/Home
+    export JAVA_HOME=/Library/Java/JavaVirtualMachines/temurin-25.jdk/Contents/Home
     PATH=$JAVA_HOME/bin:$PATH
 
     # Maven
-    MAVEN_HOME=$HOME/software/apache-maven-3.9.10
+    MAVEN_HOME=$HOME/software/apache-maven-3.9.16
     PATH=$MAVEN_HOME/bin:$PATH
     export MAVEN_OPTS="-Xms512m -Xmx1024m"
 ```
@@ -176,7 +177,3 @@ por defecto
 ```shell
     ssh -T git@github.com
 ```
-
-## Instalación de una herramienta cliente gráfica para Git
-
-- Puede utilizarse cualquier herramienta cliente (https://git-scm.com/downloads/guis)

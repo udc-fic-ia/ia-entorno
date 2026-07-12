@@ -1,4 +1,4 @@
-# Instalación / Configuración entorno IA / 2025-2026 - Windows
+# Instalación / Configuración entorno IA / 2026-2027 - Windows
 -------------------------------------------------------------------------------
 
 ## Descargar y copiar el SW 
@@ -11,26 +11,28 @@
         + https://maven.apache.org/download.cgi
         + Descargar el "Binary zip archive"
 
-- Descargar e instalar Eclipse Temurin (proyecto open source de Java SE basado en OpenJDK)
-    - https://adoptium.net
-    - Descargar el instalador .msi para Windows para la versión 8 (requerida por el software OpenESB)
-    - Descargar el instalador .msi para Windows para la versión 21 (última versión LTS) 
-    - Instalar usando las opciones por defecto
+- Descargar e instalar Temurin JDK
+    -  https://adoptium.net/es/temurin/releases?version=8&os=any&arch=any	
+        + Descargar el instalador .msi para Windows para la versión 8 (requerida por el software OpenESB)
+	    + Instalar usando las opciones por defecto
+    - https://adoptium.net/es/temurin/releases?version=25&os=any&arch=any
+	    + Descargar el instalador .msi para Windows para la versión 25 (última versión LTS)
+	    + Instalar usando las opciones por defecto
 
 - Descargar e instalar IntelliJ IDEA
     - https://www.jetbrains.com/es-es/idea/download
         + Se puede utilizar la versión Community (libre) o la versión Ultimate
           (solicitando una licencia para estudiantes según se indica en
           https://www.jetbrains.com/es-es/community/education/#students).
-      - Instalar usando las opciones por defecto.
+        + Instalar usando las opciones por defecto.
         
 ## Descargar y descomprimir los ejemplos de la asignatura (rs-java-examples y ws-movies-repo)
 
 > Disponibles en moodle
 
-- Descargar `rs-javaexamples-3.9.0-src.zip` en `C:\software` y descomprimir.
+- Descargar `rs-javaexamples-3.10.0-src.zip` en `C:\software` y descomprimir.
 
-- Descargar `ws-movies-3.9.0-repo.zip` en la carpeta `.m2\repository` del directorio HOME del usuario y descomprimir. 
+- Descargar `ws-movies-3.10.0-repo.zip` en la carpeta `.m2\repository` del directorio HOME del usuario y descomprimir. 
   
 ## Establecer variables de entorno
 
@@ -41,10 +43,10 @@
   nombre y el valor, y pulsar "Aceptar")
     - Nombre: `JAVA_HOME`
         + Valor: Directorio donde se instaló Eclipse Temurin (JDK 21)
-        + Por ejemplo:`C:\Program Files\Eclipse Adoptium\jdk-21.0.7.6-hotspot`
+        + Por ejemplo:`C:\Program Files\Eclipse Adoptium\jdk-25.0.3.9-hotspot`
     - Nombre: `MAVEN_HOME`
         + Valor: Directorio donde se descomprimió Maven
-        + Por ejemplo: `C:\software\apache-maven-3.9.10`
+        + Por ejemplo: `C:\Software\apache-maven-3.9.16`
     - Nombre: `MAVEN_OPTS`
         + Valor: `-Xms512m -Xmx1024m`
 
@@ -75,9 +77,9 @@
       utilizar el perfil -P mysql, y disponer de un servidor MySQL configurado
 
 ```shell
-    cd C:/software/rs-javaexamples-3.9.0
+    cd C:/software/rs-javaexamples-3.10.0
     mvn install
-    cd C:/software/rs-javaexamples-3.9.0/rs-movies/rs-movies-service
+    cd C:/software/rs-javaexamples-3.10.0/rs-movies/rs-movies-service
     mvn sql:execute
 ```
 
@@ -136,10 +138,6 @@
     ssh -T git@github.com
 ```
     
-## Instalación de una herramienta cliente gráfica para Git
-
-- Puede utilizarse cualquier herramienta cliente (https://git-scm.com/downloads/guis)
-
 ## Configuración de IntelliJ IDEA
 - Se recomienda configurar "Git Bash" como el terminal por defecto. Se puede hacer en el wizard
   `File > Settings > Tools > Terminal` seleccionando `C:\Program Files\Git\bin\bash.exe` como valor de `Shell path`
