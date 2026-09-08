@@ -32,7 +32,7 @@
 
 - Descargar `rs-javaexamples-3.10.0-src.zip` en `C:\software` y descomprimir.
 
-- Descargar `ws-movies-3.10.0-repo.zip` en la carpeta `.m2\repository` del directorio HOME del usuario y descomprimir. 
+- Descargar `ws-movies-3.10.0-repo.zip` en la carpeta `.m2\repository` del directorio HOME del usuario (%USERPROFILE%) y descomprimir. 
   
 ## Establecer variables de entorno
 
@@ -126,7 +126,7 @@
 - Clic en "New SSH Key" para añadir una nueva clave SSH.
 - En el campo "Title" ponerle un nombre.
 - En el campo "Key" copiar la clave pública, es decir, el contenido del fichero
-  `$HOME/.ssh/id_rsa.pub`
+  `%USERPROFILE%/.ssh/id_rsa.pub`
 - Clic en "Add SSH key".
 
 - Comprobar conexión SSH con el servidor de git y añadirlo a la lista de hosts
