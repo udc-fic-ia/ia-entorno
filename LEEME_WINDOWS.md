@@ -42,7 +42,7 @@
   variables de entorno (para cada una pulsar en "Nueva ...", introducir el 
   nombre y el valor, y pulsar "Aceptar")
     - Nombre: `JAVA_HOME`
-        + Valor: Directorio donde se instaló Eclipse Temurin (JDK 21)
+        + Valor: Directorio donde se instaló Eclipse Temurin (JDK 25)
         + Por ejemplo:`C:\Program Files\Eclipse Adoptium\jdk-25.0.3.9-hotspot`
     - Nombre: `MAVEN_HOME`
         + Valor: Directorio donde se descomprimió Maven
